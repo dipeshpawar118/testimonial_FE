@@ -40,7 +40,7 @@ export const Pricing = () => {
 <a className="main-btn" href="#">GET STARTED</a>
 </div>
 <div className="buttom-shape">
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 350 112.35"><defs><style>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 350 125.35"><defs><style>
     {`.color-1 {
                         fill: #2bdbdc;
                         isolation: isolate;

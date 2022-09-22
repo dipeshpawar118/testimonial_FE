@@ -17,6 +17,10 @@ export const Header = () => {
             setActiveClass('navgition navgition-transparent')
         }
      });
+     const [isNavVisible,setIsNavVisible] = useState(false)
+     const showNav = () => {
+        setIsNavVisible(!isNavVisible)   
+     }
 return (
 <header className="header-area">
 <div className={activeClass}>
@@ -27,12 +31,12 @@ return (
 <a className="navbar-brand" href="#">
 <img src={images.Logo} alt="Logo" />
 </a>
-<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+<button onClick={() => showNav()} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
 <span className="toggler-icon"></span>
 <span className="toggler-icon"></span>
 <span className="toggler-icon"></span>
 </button>
-<div className="collapse navbar-collapse sub-menu-bar" id="navbarOne">
+<div className={isNavVisible ? 'collapse navbar-collapse sub-menu-bar show' : 'collapse navbar-collapse sub-menu-bar'} id="navbarOne">
 <ul className="navbar-nav m-auto">
 <li className="nav-item">
 <a className="page-scroll" href="#home">HOME</a>
