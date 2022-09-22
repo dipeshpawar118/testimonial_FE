@@ -33,7 +33,7 @@ export const Footer = () => {
 <div className="col-lg-2 col-md-4 col-sm-6">
 <div className="footer-link">
 <h6 className="footer-title">Company</h6>
-<ul>
+<ul style={{paddingLeft:0}}>
 <li><a href="#">About</a></li>
 <li><a href="#">Contact</a></li>
 <li><a href="#">Career</a></li>
@@ -43,7 +43,7 @@ export const Footer = () => {
 <div className="col-lg-3 col-md-4 col-sm-6">
 <div className="footer-link">
 <h6 className="footer-title">Product & Services</h6>
-<ul>
+<ul style={{paddingLeft:0}}>
 <li><a href="#">Products</a></li>
 <li><a href="#">Business</a></li>
 <li><a href="#">Developer</a></li>
@@ -53,7 +53,7 @@ export const Footer = () => {
 <div className="col-lg-3 col-md-4 col-sm-5">
 <div className="footer-link">
 <h6 className="footer-title">Help & Suuport</h6>
-<ul>
+<ul style={{paddingLeft:0}}>
 <li><a href="#">Support Center</a></li>
 <li><a href="#">FAQ</a></li>
 <li><a href="#">Terms & Conditions</a></li>
