@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/style.css';
 import '../css/slick.css';
 import '../css/default.css';
@@ -8,10 +8,18 @@ import '../css/bootstrap.min.css'
 import { images } from '../config/images';
 import Background from '../assets/images/header-bg.jpg'
 export const Header = () => {
-    
-    return (
+    const [activeClass,setActiveClass] = useState('navgition navgition-transparent')
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50){
+            setActiveClass('navgition navgition-transparent sticky');
+        }
+        else {
+            setActiveClass('navgition navgition-transparent')
+        }
+     });
+return (
 <header className="header-area">
-<div className="navgition navgition-transparent">
+<div className={activeClass}>
 <div className="container">
 <div className="row">
 <div className="col-lg-12">
@@ -26,7 +34,7 @@ export const Header = () => {
 </button>
 <div className="collapse navbar-collapse sub-menu-bar" id="navbarOne">
 <ul className="navbar-nav m-auto">
-<li className="nav-item active">
+<li className="nav-item">
 <a className="page-scroll" href="#home">HOME</a>
 </li>
 <li className="nav-item">
