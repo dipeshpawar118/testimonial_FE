@@ -7,8 +7,8 @@ import '../css/default.css';
 import '../css/LineIcons.css';
 import '../css/magnific-popup.css';
 import '../css/bootstrap.min.css'
-
 export const Slider = () => {
+
     const TestimonialData = [
         {
             id:1,
@@ -37,24 +37,44 @@ export const Slider = () => {
             content:'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name:'Isabela Moreira',
             designation:'CEO, GrayGrids'
+        },
+        {
+            id:5,
+            image:images.Author1,
+            content:'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            name:'Isabela Moreira',
+            designation:'CEO, GrayGrids'
+        },
+        {
+            id:6,
+            image:images.Author2,
+            content:'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            name:'Isabela Moreira',
+            designation:'CEO, GrayGrids'
+        },
+        {
+            id:7,
+            image:images.Author3,
+            content:'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            name:'Isabela Moreira',
+            designation:'CEO, GrayGrids'
+        },
+        {
+            id:8,
+            image:images.Author4,
+            content:'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            name:'Isabela Moreira',
+            designation:'CEO, GrayGrids'
         }
     ]
-    const { isLastItemVisible, scrollNext,scrollToItem } = React.useContext(VisibilityContext)
-    const autoScroll = () => {
-        setInterval(() => {
-            scrollToItem()
-        },2000)
-    }
-    useEffect(() => {
-        autoScroll()
-    }, [])
+ 
   return(
     <div className="container">
     <div className="row">
    <div className="col-lg-12">
-    <ScrollMenu>     
-      {TestimonialData.map((item) => (
-        <div className="col-lg-12" style={{marginRight:100,marginLeft:100}}>
+    <ScrollMenu transitionDuration={1000} transitionBehavior="smooth" RightArrow={RightArrow} >     
+      {TestimonialData.map((item , index) => (
+        <div   key={item.id}  itemId={item.id}  className="col-lg-12" style={{marginRight:100,marginLeft:100}}>
         <div className="single-testimonial mt-30 mb-30 text-center">
         <div className="testimonial-image">
          <img src={item.image} alt="Author" />
@@ -73,3 +93,39 @@ export const Slider = () => {
       </div>
 )
 }
+
+// function LeftArrow() {
+//     const { isFirstItemVisible, scrollPrev } =
+//       React.useContext(VisibilityContext);
+//       scrollPrev()
+//   }
+  
+  function RightArrow() {
+    const { isLastItemVisible	, scrollNext } = React.useContext(VisibilityContext);
+    var intervalId 
+    const scroll = () => {
+     
+    }
+
+    const autoScroll = () => {
+        setTimeout(()=>{
+            if(isLastItemVisible	){
+                console.log("auto scroll Stop")
+                clearTimeout()
+            }else {
+                scrollNext();
+                autoScroll()
+                
+            }    
+        }, 2000)
+    }
+    useEffect(() => {
+        autoScroll()
+        console.log("auto scroll called")
+    }, [])
+  
+    return (
+     <>
+     </>
+    );
+  }
