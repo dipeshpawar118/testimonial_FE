@@ -57,7 +57,7 @@ return (
 </div>
 <div className="navbar-social d-none d-sm-flex align-items-center">
 <span>FOLLOW US</span>
-<ul>
+<ul style={{marginBottom:0}}>
 <li><a href="#"><i className="lni-facebook-filled"></i></a></li>
 <li><a href="#"><i className="lni-twitter-original"></i></a></li>
 <li><a href="#"><i className="lni-instagram-original"></i></a></li>
