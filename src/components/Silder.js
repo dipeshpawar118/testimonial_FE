@@ -103,24 +103,28 @@ export const Slider = () => {
   function RightArrow() {
     const { isLastItemVisible	, scrollNext } = React.useContext(VisibilityContext);
     var intervalId 
-    const scroll = () => {
-     
-    }
-
+   
     const autoScroll = () => {
         setTimeout(()=>{
-            if(isLastItemVisible	){
+            if(isLastItemVisible){
                 console.log("auto scroll Stop")
                 clearTimeout()
             }else {
                 scrollNext();
-                autoScroll()
-                
+                autoScroll() 
             }    
-        }, 2000)
+        },2000)
     }
     useEffect(() => {
-        autoScroll()
+
+        const interval = setInterval(() => {
+            if(isLastItemVisible){
+                console.log("auto scroll Stop")
+                clearInterval(interval);
+            }else {
+                scrollNext();
+            }  
+          }, 2000);
         console.log("auto scroll called")
     }, [])
   
