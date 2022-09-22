@@ -7,6 +7,7 @@ import '../../css/default.css';
 import '../../css/LineIcons.css';
 import '../../css/magnific-popup.css';
 import '../../css/bootstrap.min.css'
+import { Slider } from '../../components/Silder';
 
 export const Testimonial = () => {
     const TestimonialData = [
@@ -50,7 +51,7 @@ export const Testimonial = () => {
         </div> 
         </div>
         </div> 
-        <div className="row">
+        {/* <div className="row">
         <div className="col-lg-12">
         <div className="row testimonial-active">
         <div className="col-lg-4">
@@ -103,7 +104,8 @@ export const Testimonial = () => {
         </div>
         </div> 
         </div>
-        </div> 
+        </div>  */}
+        <Slider />
         </div> 
         </section>
     )
