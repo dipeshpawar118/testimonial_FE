@@ -19,7 +19,8 @@ export const Slider = () => {
 
     async function getTestimonialData() {
         try {
-            const response = await fetch('http://localhost:3000/testimonial/get');
+            var path =  config.dev_server_url +'/testimonial/get' ;
+            const response = await fetch(path);
             var result = await response.json();
              result.map((iteam , index) =>{
                 iteam.image = userImage[(index % 4 )]
@@ -37,58 +38,58 @@ export const Slider = () => {
         {
             id: 1,
             image: images.Author1,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 2,
             image: images.Author2,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 3,
             image: images.Author3,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 4,
             image: images.Author4,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 5,
             image: images.Author1,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 6,
             image: images.Author2,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 7,
             image: images.Author3,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         },
         {
             id: 8,
             image: images.Author4,
-            content: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
+            description: 'Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!',
             name: 'Isabela Moreira',
-            designation: 'CEO, GrayGrids'
+            post: 'CEO, GrayGrids'
         }
     ]
 
@@ -101,7 +102,7 @@ export const Slider = () => {
             <div className="row">
                 <div className="col-lg-12">
                     <ScrollMenu transitionDuration={1000} transitionBehavior="smooth" RightArrow={RightArrow} >
-                        {serverData.map((item, index) => (
+                        {TestimonialData.map((item, index) => (
                             <div key={item.testimonialId} itemId={item.testimonialId} className="col-lg-12" style={{ marginRight: 100, marginLeft: 100 }}>
                                 <div className="single-testimonial mt-30 mb-30 text-center">
                                     <div className="testimonial-image">
