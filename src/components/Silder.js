@@ -14,17 +14,17 @@ export const Slider = () => {
    const  [serverData , setServerData  ] = useState([]);
     useEffect(() => {
         getTestimonialData();
-        console.log(config.dev_server_url)
+        
     }, [])
 
     async function getTestimonialData() {
         try {
-            var path =  config.dev_server_url +'/testimonial/get' ;
+            var path =  config.prod_server_url +'/get' ;
             const response = await fetch(path);
             var result = await response.json();
-             result.map((iteam , index) =>{
-                iteam.image = userImage[(index % 4 )]
-             } )
+            //  result.map((iteam , index) =>{
+            //     iteam.image = userImage[(index % 4 )]
+            //  } )
             console.log(result);
             setServerData(result)
           
@@ -102,7 +102,7 @@ export const Slider = () => {
             <div className="row">
                 <div className="col-lg-12">
                     <ScrollMenu transitionDuration={1000} transitionBehavior="smooth" RightArrow={RightArrow} >
-                        {TestimonialData.map((item, index) => (
+                        {serverData.map((item, index) => (
                             <div key={item.testimonialId} itemId={item.testimonialId} className="col-lg-12" style={{ marginRight: 100, marginLeft: 100 }}>
                                 <div className="single-testimonial mt-30 mb-30 text-center">
                                     <div className="testimonial-image">
